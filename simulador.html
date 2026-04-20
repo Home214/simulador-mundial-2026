@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador Mundial</title>
+    <link rel="stylesheet" href="css/estilos.css">
+     <meta name="viweport"content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <h1>Simulador del Mundial ⚽</h1>
+</header>
+
+<section>
+
+    <h2>Elegí grupo</h2>
+<div class="caja-select">
+    <select id="grupo" class="select-estilo" onchange="mostrarEquipos()">
+        <option value="">--Seleccionar grupo--</option>
+        <option value="A">Grupo A</option>
+        <option value="B">Grupo B</option>
+        <option value="C">Grupo C</option>
+        <option value="D">Grupo D</option>
+        <option value="E">Grupo E</option>
+        <option value="F">Grupo F</option>
+        <option value="G">Grupo G</option>
+        <option value="H">Grupo H</option>
+        <option value="I">Grupo I</option>
+        <option value="J">Grupo J</option>
+        <option value="K">Grupo K</option>
+        <option value="L">Grupo L</option>
+    </select>
+
+    <h2>Equipos del grupo</h2>
+<div class="caja-select">
+<select id="equipo" class="select-estilo">
+    <option>Primero elegí un grupo</option>
+</select>
+</div>
+
+    <br><br>
+
+    
+    <button class="boton-simular"onclick="simularDesdeGrupo()">Simulador fase de grupo</button>
+    <div id="tabla-posiciones"></div>
+    <div id="mensaje-terceros" class="mensaje-info">
+    ⚠️ Para ver todas las mejores selecciones que quedaron en 3° puesto y clasificaron a 16avos,
+    tenés que simular todos los grupos.
+</div>
+<button class="boton-terceros" onclick="mostrarMejoresTerceros()">Ver mejores terceros</button>
+<button class="boton-simular" onclick="irAEliminatorias()">Ir a eliminatorias</button>
+</button>
+    <h2 id="resultado"></h2>
+
+
+
+
+<script src="js/simulador.js"></script>
+
+</body>
+</html>

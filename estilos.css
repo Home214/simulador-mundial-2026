@@ -1,0 +1,339 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #122142 0%, #071122 100%);
+  color: #c8e6ff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  background: rgba(0, 31, 75, 0.92);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.08);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 0.03em;
+  color: #b8e0ff;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+
+p {
+  font-size: 18px;
+}
+
+section {
+  margin-top: 30px;
+}
+
+.simulador-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+
+.caja-select {
+  display: inline-block;
+  width: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin: 16px auto;
+}
+
+.select-estilo {
+  width: 260px;
+  max-width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 18, 49, 0.9);
+  color: #e6f7ff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.select-estilo:hover,
+.select-estilo:focus {
+  border-color: #4ba7ff;
+}
+
+.boton,
+.boton-terceros,
+.boton-simular {
+  display: inline-block;
+  min-width: 180px;
+  margin: 12px 10px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.boton {
+  background: #ffd500;
+  color: #0b1c36;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 213, 0, 0.2);
+}
+
+.boton-simular {
+  background: linear-gradient(135deg, #ff4f61 0%, #ff6d7d 100%);
+  color: white;
+}
+
+.boton-simular:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 75, 95, 0.25);
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+#tabla-posiciones {
+  margin-top: 36px;
+  padding: 0 10px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px 10px;
+  color: #dcecff;
+  text-align: left;
+}
+
+.tabla th {
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+}
+
+.tabla tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tabla tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  color: #d4f0ff;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 14px;
+  margin-top: 24px;
+}
+
+#bracket {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  padding: 20px;
+  border-radius: 12px;
+  border: 3px solid #e94560;
+  box-shadow: 0 0 30px rgba(233, 69, 96, 0.3) inset;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+#bracket h2 {
+  color: #00d4ff;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+.fase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.partido {
+  background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+  border: 2px solid #e94560;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 16px rgba(233, 69, 96, 0.25);
+  min-height: 110px;
+}
+
+.partido .equipo {
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+  color: #00d4ff;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  border-left: 4px solid #e94560;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.tarjeta.ganador {
+  background: linear-gradient(135deg, #1a3a3a 0%, #0d5c5c 100%);
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  padding: 16px;
+  color: #00ff88;
+  box-shadow: 0 8px 16px rgba(0, 255, 136, 0.2);
+  text-align: center;
+  font-weight: bold;
+  min-height: 110px;
+}
+
+.resultado {
+  color: #a8ff9f;
+  font-size: 14px;
+}
+
+.bracket-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.equipo,
+a.equipo {
+  display: inline-block;
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+  color: #00d4ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 6px;
+  border: 2px solid rgba(233, 69, 96, 0.35);
+  transition: all 0.2s ease;
+}
+
+.equipo:hover,
+a.equipo:hover {
+  color: #00ff88;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+}
+.flag {
+  width: 20px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+/* ===== BRACKET FIFA ===== */
+
+.bracket-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.match {
+  background: linear-gradient(135deg, #0f3460, #533483);
+  border: 2px solid #e94560;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+}
+
+.team {
+  padding: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.team:last-child {
+  border-bottom: none;
+}
+
+.resultado {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+/* Hace que el cuadro pueda desplazarse :horizontal si no entra **/
+#bracket {
+overflow-x:auot;
+ -webkit-overflow-scrolling: touch; 
+}
+/*Evita que las tarjetas se achiquen demasiado*/
+.partido,
+.match {
+  min-width: 220px;
+}
+/* Telefonos */
+@media (max-width: 600px) {
+ h1{
+  font-size: 12px;
+ }
+ #bracket {
+  padding: 12px;
+ }
+ .fase {
+  grid-template-columns: 1fr;
+  gap: 14px;
+ }
+ .partido,
+  .match {
+    width: 100%;
+    min-width: unset;
+  }
+  .equipo,
+  .team {
+    font-size: 15px;
+    padding: 8px;
+  }
+  .boton,
+  .boton-simular {
+    width: 100%;
+    min-width: 320px;
+  }
+}
+@media (max-width:480px){
+  h1{
+    font-size: 14px;
+  }
+  .equipo,
+  .team {
+    font-size: 14px;
+  }
+  img.flag{
+    width: 16px;
+  }
+}
